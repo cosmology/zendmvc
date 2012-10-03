@@ -1,0 +1,122 @@
+@CHARSET "ISO-8859-1";
+#header {
+	margin: 0 auto;
+	width: 800px;
+	background: #EFEFEF;
+}
+	#header ul{
+		width:800px;
+	}
+	#header ul , #header ul li {
+		display: inline;
+		padding: 5px 0px;
+		font: normal small/.37em Helvetica,Arial,sans-serif;
+		/*border: 1px solid #fff;*/
+		height: 50px;		
+	}
+		#header ul li a {
+			text-decoration: none;
+			padding: 5px 10px;
+			color: #000;
+		}
+			#header ul li a {				
+				text-decoration: none;
+				color: #000;
+			}
+			#header ul li a:hover {
+				text-decoration: none;
+				color: #F00;
+			}
+			
+#content{
+	margin: 0 auto;
+	/* padding: 15px;
+	border: 1px solid #EFEFEF; */
+	width: 768px;
+	
+}
+#footer{
+	margin: 0 auto;
+	width: 800px;
+	clear: both;
+	float left;
+	height:50px;
+	background: #EFEFEF;
+	text-align: center;
+}
+	#footer ul , #footer ul li {
+		display: inline;
+		font: normal smaller/.67em Helvetica,Arial,sans-serif;
+		padding: 0px;
+		height: 20px;
+		background: #EFEFEF;
+	}
+		#footer ul li a {
+			text-decoration: none;
+			padding: 5px 10px;
+			color: #000;
+		}
+			#footer ul li a {				
+				text-decoration: none;
+				color: #000;
+			}
+			#footer ul li a:hover {
+				text-decoration: none;
+				color: #F00;
+			}
+
+.pagination {
+	clear:both;
+	float: left;
+    color: #666666;
+    font-family: Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
+    font-size: 12px;
+    height: 26px;
+    margin-top: 20px;
+    padding-top: 14px;
+    text-align: right;
+}
+.pagination a {
+	padding: 0px 3px;
+	font-weight: bold;
+}
+.pagination span.current {
+    font-weight: bold;
+}
+.pagination span.disabled {
+    color: #DDDDDD;
+}
+/*
+.pagination .page {
+    color: #000000;
+    font-size: 13px;
+    font-weight: bold;
+}
+.pagination a {
+    border: 1px solid #BBBBBB;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+.pagination a:hover, .pagination a:active {
+    background-color: #15478C;
+    border: 1px solid #2E4B73;
+    color: #FFFFFF;
+}
+.pagination span.current {
+    background-color: #15478C;
+    border: 1px solid #15478C;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 2px;
+    padding: 4px 7px;
+}
+.pagination span.disabled {
+    border: 1px solid #DDDDDD;
+    color: #DDDDDD;
+    font-size: 13px;
+    margin: 2px;
+    padding: 2px 5px;
+}
+*/

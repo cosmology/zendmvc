@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+	<nav>
+		<home>
+			<label>home</label>
+			<uri>/index</uri>
+			
+			<pages>
+				<about>					
+					<label>about</label>
+					<uri>/about/index</uri>
+				</about>
+				<user>
+					<label>user</label>
+					<uri>/user/index</uri>
+				</user>
+				<search>
+					<label>search</label>
+					<uri>/search/index</uri>
+				</search>				
+				<contact>
+					<label>contact</label>
+					<uri>/contact/index</uri>
+				</contact>
+				<admin>
+					<label>admin</label>
+					<uri>/admin/index</uri>
+				</admin>
+			</pages>
+		</home>
+	</nav>
+</configdata>

@@ -1,0 +1,30 @@
+<?php echo $this->headLink()->appendStylesheet($this->baseUrl("/css/users.css"));?>
+
+<a href="<?php echo $this->url(
+			array(
+				'controller' => 'user',
+				'action'     => 'sign'
+			),
+			'default',
+			true) ?>">Add New Client
+</a>
+
+     
+
+<dl id="userList">
+	<dt></dt>
+	<dd><b>Name</b></dd>
+	<dd><b>Email</b></dd>
+	<dd><b>Phone</b></dd>
+	
+	<?php foreach ($this->paginator as $entry): ?>
+	<dt></dt>
+	<dd><?php echo $this->escape($entry->name) ?></dd>
+	<dd><?php echo $this->escape($entry->email) ?></dd>
+	<dd><?php echo $this->escape($entry->phone) ?></dd>
+	<?php endforeach ?>	
+</dl>
+
+<div>
+<?php echo $this->paginationControl($this->paginator, 'Jumping', '/controls/controls.phtml');?>
+</div>

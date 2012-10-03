@@ -1,0 +1,33 @@
+<!-- application/layouts/scripts/layout.phtml -->
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="eng">
+<head>
+
+<?php 
+
+	echo $this->headMeta(); 
+	echo $this->headTitle();
+	echo $this->headLink()->prependStylesheet($this->baseUrl("/css/global.css"));
+	
+	// we do this here so all pages using this layout can have jQuery
+	// do the same with other libs like Dojo YUI ExtJS ...
+	if($this->jQuery()->isEnabled()){ 
+		$this->jQuery()->addStylesheet('/js/jquery/css/smoothness/jquery-ui-1.8.23.custom.css')
+						->setLocalPath('/js/jquery/js/jquery-1.8.0.min.js')
+						->setUiLocalPath('/js/jquery/js/jquery-ui-1.8.23.custom.min.js');
+						
+		echo $this->jQuery();
+	}
+ 
+ ?>
+
+</head>
+
+<body>
+<?php echo $this->render('header.phtml') ?>
+<div id="content">
+	<?php echo $this->layout()->content ?>
+</div>
+<?php echo $this->render('footer.phtml') ?>
+</body>
+</html>

@@ -1,0 +1,26 @@
+@CHARSET "ISO-8859-1";
+ul {
+	margin-left: 0;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+	ul li {
+		display: inline;
+		list-style-type: none;
+	}
+#results {
+	clear:left; 
+	float:left;
+}
+	
+#results ul {
+	margin-left: 0;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+	#results ul li {
+		display: block;
+		list-style-type:circle;
+	}
+	

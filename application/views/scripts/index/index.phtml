@@ -1,0 +1,16 @@
+<?php
+if (isset ( $_GET ['url'] )) {
+	$url = $_GET ['url'];
+	echo $url;
+	require 'controllers/' . $url . 'php';
+}
+
+?>
+<h2>Welcome to Zend Framework Home Page!</h2>
+<p>While knowledge of W3C Recommendations in both breadth and depth is
+	good to have, this course has been written to give you a concise but
+	easy to digest introduction to web development/design, and the W3C
+	recommendations can be a bit verbose, to say the least. All cases here
+	in which you are directed to visit the CSS 2.1 Recommendation point to
+	material that's too obscure to justify accurate explanation in this
+	article.</p>

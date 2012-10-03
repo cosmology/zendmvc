@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+dl { 
+	width: 600px;
+}
+	dt { 
+		width: 200px; 
+		text-align: right; 
+		float: left; 
+		clear: both;
+	}
+		dd { 
+			width: 200px;
+			margin: 0; 
+			float: left; 
+			line-height: 1.6em; 
+			border-bottom:thin dotted #cccccc;
+		}

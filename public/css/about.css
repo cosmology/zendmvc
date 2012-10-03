@@ -1,0 +1,18 @@
+@CHARSET "ISO-8859-1";
+#double ul{
+	width:750px;
+	margin-bottom:20px;
+	overflow:hidden;
+	margin-left: 0;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+#double li{
+	line-height:1.5em;
+	float:left;
+	display:inline;
+}
+#double li  { width:50%;} /* 2 col */
+/*#triple li  { width:33.333%; }/* /* 3 col */
+/* #quad li    { width:25%; } */ /* 4 col */
+/* #six li     { width:16.666%; } */ /* 6 col */

@@ -1,0 +1,17 @@
+<br /><br />
+<p>Search Google for potential clients!
+ 
+<?php
+$this->form->setAction($this->url());
+echo $this->form;
+
+?>
+
+<div style="clear:left; float:left;">
+	<ul>
+	<?php 
+	if(isset($this->results))
+		foreach ($this->results[0] as $url): ?>
+		<li><?php echo $url ?></li>
+		<?php endforeach ?>
+</div>
