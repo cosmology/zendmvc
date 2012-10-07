@@ -11,7 +11,7 @@ class Tiger_Controller_Plugin_Language extends Zend_Controller_Plugin_Abstract
         $this->_request = $request;
         
         //echo 'routeStartup request: <br />' .  var_dump($request);
-        //$module = strtolower($this->_request->getModuleName());
+        $module = strtolower($this->_request->getModuleName());
         
         echo 'routeStartup: ' . $request->getBaseUrl() . '<br/>';
         
@@ -35,10 +35,14 @@ class Tiger_Controller_Plugin_Language extends Zend_Controller_Plugin_Abstract
         // the request object.
  
         // check for additional module translation files
-        $module = strtolower($this->_request->getModuleName());
+        $module = strtolower($this->_request->getModuleName());        
+        $controller = strtolower($this->_request->getControllerName());        
+        $action = strtolower($this->_request->getActionName()); 
+        
         
  		
- 		echo "routeShoutdwon module: $module<br />";
+ 		echo "routeShoutdwon<br />";
+ 		//var_dump($this->_request);
  			
         if (($module !== 'default'))
         {
@@ -55,6 +59,7 @@ class Tiger_Controller_Plugin_Language extends Zend_Controller_Plugin_Abstract
  
             // add the module translation to the base application translation array
             $this->_translate->addTranslation(array('content' => $translate));
+            //var_dump($this->_translate);
         }
     }
  
@@ -122,7 +127,7 @@ class Tiger_Controller_Plugin_Language extends Zend_Controller_Plugin_Abstract
         $regexValidation = $this->getRegexValidationList();
  
         $route = new Zend_Controller_Router_Route(
-                        ':@controller/:@action/*',
+                        ':@module/:@controller/:@action/*',
                         array(
                             'lang' => $this->_locale->toString(),
                             'module' => 'default',
@@ -137,7 +142,7 @@ class Tiger_Controller_Plugin_Language extends Zend_Controller_Plugin_Abstract
         $this->_router->addRoute('language', $route);
  
         $route = new Zend_Controller_Router_Route(
-                        ':lang/:@controller/:@action/*',
+                        ':lang/:@module/:@controller/:@action/*',
                         array(
                             'lang' => $this->_locale->toString(),
                             'module' => 'default',

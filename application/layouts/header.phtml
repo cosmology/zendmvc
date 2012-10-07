@@ -11,9 +11,15 @@
 $front = Zend_Controller_Front::getInstance();
 $router = Zend_Controller_Front::getInstance()->getRouter();
 $currentRoute = $router->getCurrentRouteName();
-$currentRoute = ($currentRoute == "lang")? "default": $currentRoute;
+$currentRoute = ($currentRoute == "lang") ? "default": $currentRoute;
 
 $currentController = $front->getRequest()->getControllerName();
+
+
+$translate = Zend_Registry::get('Zend_Translate');
+
+var_dump($translate);
+
 $currentAction = $front->getRequest()->getActionName();
 $locale = $this->translate()->getLocale();
 
@@ -24,6 +30,12 @@ foreach ($routes as $name => $route) {
 	echo "	<li>$name</li>\n";
 }
 echo '</ol>';
+
+$current = (string)$currentController;
+$prevod = $translate->translate($current);
+echo "prevod $prevod na $current<br />";
+
+//var_dump($this->translate());
 
 ?>
 <div id="header">
@@ -44,10 +56,10 @@ echo '</ol>';
 	</div>
 	<div style="float:right;">
 	<?php if ($locale != "sr"){ ?>
-	<a href="<?php echo $this->url(array("lang" => "sr", 'controller' => $currentController, 'action'=>$currentAction), $currentRoute); ?>">Serbian</a>
+	<a href="<?php echo $this->url(array("lang" => "sr", 'controller' => $prevod, 'action'=>$currentAction), $currentRoute); ?>">Serbian</a>
 	<?php } ?>
 	<?php if ($locale != "en"){ ?>
-	<a href="<?php echo $this->url(array("lang" => "en"), $currentRoute); ?>">English</a>
+	<a href="<?php echo $this->url(array("lang" => "en", 'controller' => $prevod, 'action'=>$currentAction), $currentRoute); ?>">English</a>
 	<?php }?>
 	</div>
 </div>

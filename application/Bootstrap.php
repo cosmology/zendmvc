@@ -217,42 +217,48 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	
 	protected function _initNavigation()
 	{
-		echo '_initNavigation';
+
 		$this->bootstrap('layout');
 		$layout = $this->getResource('layout');
 		$view = $layout->getView();
 			
-		/* $navArray = array(
+		$navArray = array(
 				array(
+						'module'		=> 'default',
 						'controller' => 'index',
 						'action' => 'index',
-						'label' => 'Home'
+						'label' => 'home'
 				),
 				array(
+						'module'		=> 'default',
 						'controller' => 'about',
 						'action' => 'index',
-						'label' => 'About'
+						'label' => 'about'
 				),
 				array(
+						'module'		=> 'default',
 						'controller' => 'user',
 						'action' => 'index',
-						'label' => 'User'
+						'label' => 'user'
 				),
 				array(
+						'module'		=> 'default',
 						'controller' => 'search',
 						'action' => 'index',
-						'label' => 'Search'
+						'label' => 'search'
 				)
 				,
 				array(
+						'module'		=> 'default',
 						'controller' => 'contact',
 						'action' => 'index',
-						'label' => 'Contact'
+						'label' => 'contact'
 				),
 				array(
-						'controller' => 'admin',
+						'module'		=> 'admin',
+						'controller' => 'index',
 						'action' => 'index',
-						'label' => 'Admin'
+						'label' => 'admin'
 				)
 		);
 		
@@ -260,9 +266,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		
 		$config = new Zend_Config($navArray);
 		$navigation = new Zend_Navigation();
-		$navigation->addPages($config); */
+		$navigation->addPages($config);
 		
-		$config = new Zend_Config_Xml(APPLICATION_PATH . '/configs/navigation.xml', 'nav');
+		//$config = new Zend_Config_Xml(APPLICATION_PATH . '/configs/navigation.xml', 'nav');
 		// setup navigations
 		$navigation = new Zend_Navigation($config);
 		
