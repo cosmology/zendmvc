@@ -1,3 +1,3 @@
 eclipse.preferences.version=1
-include_path=5;com.zend.php.phpunit.CONTAINER\u00055;org.eclipse.dltk.USER_LIBRARY/ZF0\u00050;/mvc
+include_path=5;com.zend.php.phpunit.CONTAINER\u00050;/mvc\u00055;org.zend.php.framework.CONTAINER\u00055;org.eclipse.dltk.USER_LIBRARY/ZF0\u00050;/githubzendmvc
 use_asp_tags_as_php=false
