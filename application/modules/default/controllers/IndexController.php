@@ -6,12 +6,10 @@ class IndexController extends Zend_Controller_Action
     public function init()
     {
         $uri = $this->_request->getPathInfo();
-        echo "uri: $uri";
-        //$activeNav = $this->view->navigation()->findByUri($uri);        
+        $activeNav = $this->view->navigation()->findByUri($uri);        
         $activeNav->active = true;
         
         $this->view->addHelperPath('/ZendX/JQuery/View/Helper/', 'ZendX_JQuery_View_Helper');
-        
     }
     
     // display static views

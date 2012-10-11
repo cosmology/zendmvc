@@ -13,7 +13,7 @@ class Tiger_Controller_Plugin_Language extends Zend_Controller_Plugin_Abstract
         //echo 'routeStartup request: <br />' .  var_dump($request);
         $module = strtolower($this->_request->getModuleName());
         
-        echo 'routeStartup: ' . $request->getBaseUrl() . '<br/>';
+        //echo 'routeStartup: ' . $request->getBaseUrl() . '<br/>';
         
         /* if (substr($request->getRequestUri(), 0, -1) == $request->getBaseUrl()){
         	$request->setRequestUri($request->getRequestUri()."en"."/");
@@ -41,7 +41,7 @@ class Tiger_Controller_Plugin_Language extends Zend_Controller_Plugin_Abstract
         
         
  		
- 		echo "routeShoutdwon<br />";
+ 		//echo "routeShoutdwon<br />";
  		//var_dump($this->_request);
  			
         if (($module !== 'default'))

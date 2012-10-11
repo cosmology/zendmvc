@@ -95,9 +95,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	);
     	 
     	$defaultModuleRoute = new Zend_Controller_Router_Route(
-    			':controller/:action',
-    			array(    					
-    					'lang'		=>'en',//use init locale here
+    			':lang/:module/:controller/:action',
+    			array(
     					'module'	=>'default',
     					'controller'=>'index',
     					'action'	=>'index'
@@ -123,7 +122,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	$router->addRoute('default', $chainRoute);
     	//$router->addRoute('langRoute', $langRoute);
     	//$router->addRoute('adminModuleRoute', $adminModuleRoute);
-    	//$router->addRoute('defaultModuleRoute', $defaultModuleRoute);
+    	$router->addRoute('defaultModuleRoute', $defaultModuleRoute);
     	
     	//$router->addRoute('langControllerActionRoute', $langControllerActionRoute);
 		
@@ -200,19 +199,22 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	{
 		$this->bootstrap('layout');		
 		$layout = $this->getResource('layout');		
-		$view = $layout->getView();		
+		$view = $layout->getView();
+		ZendX_JQuery::enableView($view);
+		$view->jQuery()->enable();
 		
 		$view->doctype('XHTML1_STRICT');
 		
 		$view->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=utf-8')
 						->appendName('description','Ivan Prokic Zend Framework demo project.')
-						->appendName('keywords', 'framework, PHP, productivity');
-		
+						->appendName('keywords', 'framework, PHP, productivity');		
 		
 		$view->headTitle('Zend MVC Application');
 		
 		Zend_Paginator::setDefaultScrollingStyle('Sliding');
 		Zend_View_Helper_PaginationControl::setDefaultViewPartial('/controls/controls.phtml');
+		
+		
 	}
 	
 	protected function _initNavigation()

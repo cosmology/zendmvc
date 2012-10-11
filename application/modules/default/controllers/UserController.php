@@ -9,8 +9,10 @@ class UserController extends Zend_Controller_Action
     	$uri = $this->_request->getPathInfo();
     	$activeNav = $this->view->navigation()->findByUri($uri);
     	$activeNav->active = true;
-    
-    	$fc = Zend_Controller_Front::getInstance()->getRequest();
+    	
+    	//$this->_accessLogModel = new Application_Model_Accesslog;
+    	//echo "uri: $uri";
+    	//$fc = Zend_Controller_Front::getInstance()->getRequest();
     	//var_dump($fc->getParams());
     
     	//echo $this->view->myUrl($fc->getParams());
@@ -21,18 +23,21 @@ class UserController extends Zend_Controller_Action
 	
 	public function indexAction()
     {
-		$users = new Application_Model_UserMapper();
+		$users = new Application_Model_UserMapper();		
+		$rows = $users->fetchAll();
 		
-		$this->view->entries = $users->fetchAll();
+		$this->view->rows = $rows;
+		
+		//$this->view->entries = $users->fetchAll();
 		
 		// Create a Paginator for the blog posts query
-		$this->paginator = Zend_Paginator::factory($this->view->entries);
+		//$this->paginator = Zend_Paginator::factory($this->view->entries);
 		 
 		// Read the current page number from the request. Default to 1 if no explicit page number is provided.
-		$this->paginator->setCurrentPageNumber($this->_getParam('page', 1));
+		//$this->paginator->setCurrentPageNumber($this->_getParam('page', 1));
 		 
 		// Assign the Paginator object to the view
-		$this->view->paginator = $this->paginator;
+		//$this->view->paginator = $this->paginator;
 		
     }
 

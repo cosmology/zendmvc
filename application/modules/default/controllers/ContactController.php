@@ -7,7 +7,7 @@ class ContactController extends Zend_Controller_Action
 		$uri = $this->_request->getPathInfo();
 		$activeNav = $this->view->navigation()->findByUri($uri);
 		$activeNav->active = true;
-	
+		
 		//var_dump($fc->getParams());
 	
 		//echo $this->view->myUrl($fc->getParams());

@@ -1,0 +1,92 @@
+<?php 
+
+
+$front = Zend_Controller_Front::getInstance();
+$router = Zend_Controller_Front::getInstance()->getRouter();
+$currentRoute = $router->getCurrentRouteName();
+
+$currentRoute = ($currentRoute == "lang") ? "default": $currentRoute;
+
+$currentController = $front->getRequest()->getControllerName();
+//echo "<br />current Controller $currentController<br />";
+//echo "<br />current Route $currentRoute<br />";
+
+$translate = Zend_Registry::get('Zend_Translate');
+//echo "---------------------------------";
+//var_dump($router);
+//echo "---------------------------------";
+$currentAction = $front->getRequest()->getActionName();
+$locale = $this->translate()->getLocale();
+
+// Output list of routes, in the order they are matched
+/* echo '<ol>';
+$routes = array_reverse($router->getRoutes());
+foreach ($routes as $name => $route) {
+	echo "	<li>$name</li>\n";
+}
+echo '</ol>'; */
+//echo "prevod $prevod na $current<br />";
+
+//var_dump($this->translate());
+
+?>
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="/"><?php echo $this->translate('home_header_title');?></a>
+			<div class="nav-collapse pull-right">
+				<?php
+				
+				$nav = $this->navigation();
+				
+				echo $this->navigation()
+						->menu()
+						->setPartial('/partial/dashboardMenu.phtml')
+						->setMaxDepth(10)
+						->setMinDepth(0);
+				?>
+			</div>
+			<div id="loading" class="pull-right"></div>
+			<!--/.nav-collapse -->
+		</div>
+		<div style="float:right;">
+		<?php if ($locale != "sr"){ ?>
+		<a href="<?php echo $this->url(array('lang' => 'sr', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">Serbian</a>
+		<?php } ?>
+		<?php if ($locale != "en"){ ?>
+		<a href="<?php echo $this->url( array('lang' => 'en', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">English</a>
+		<?php }?>
+		</div>
+	</div>
+</div>
+<!-- 
+
+<div id="header">
+	<div id="header-logo">
+		<h1><?php echo $this->translate('home_body_h2_header');?></h1>
+		<div>
+			<?php echo $this->navigation()->menu();?>
+		</div>
+		<div id="breadcrumbs">
+		
+		<?php 
+			
+			$breadcrumbs = $this->navigation()->breadcrumbs()->setMinDepth(0)->setLinkLast(true)->setSeparator(" : ");
+			
+		?>
+		
+		</div>		
+	</div>
+	<div style="float:right;">
+	<?php if ($locale != "sr"){ ?>
+	<a href="<?php echo $this->url(array('lang' => 'sr', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">Serbian</a>
+	<?php } ?>
+	<?php if ($locale != "en"){ ?>
+	<a href="<?php echo $this->url( array('lang' => 'en', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">English</a>
+	<?php }?>
+	</div>
+</div>
+
+-->
+
+
