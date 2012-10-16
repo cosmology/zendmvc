@@ -28,15 +28,8 @@
 			}
 */
 
-#content{
-	margin: 0 auto;
-	padding: 15px;
-	border: 1px solid #EFEFEF;
-	width: 768px;
-	
-}
 
-#footer{
+/* #footer{
 	margin: 0 auto;
 	width: 800px;
 	clear: both;
@@ -64,7 +57,7 @@
 			#footer ul li a:hover {
 				text-decoration: none;
 				color: #F00;
-			}
+			} */
 
 /*
 .pagination {

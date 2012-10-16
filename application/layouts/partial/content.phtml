@@ -1,0 +1,49 @@
+<?php 
+
+
+$front = Zend_Controller_Front::getInstance();
+$router = Zend_Controller_Front::getInstance()->getRouter();
+$currentRoute = $router->getCurrentRouteName();
+
+$currentRoute = ($currentRoute == "lang") ? "default": $currentRoute;
+
+$currentController = $front->getRequest()->getControllerName();
+//echo "<br />current Controller $currentController<br />";
+//echo "<br />current Route $currentRoute<br />";
+
+$translate = Zend_Registry::get('Zend_Translate');
+//echo "---------------------------------";
+//var_dump($router);
+//echo "---------------------------------";
+$currentAction = $front->getRequest()->getActionName();
+$locale = $this->translate()->getLocale();
+
+// Output list of routes, in the order they are matched
+/* echo '<ol>';
+$routes = array_reverse($router->getRoutes());
+foreach ($routes as $name => $route) {
+	echo "	<li>$name</li>\n";
+}
+echo '</ol>'; */
+//echo "prevod $prevod na $current<br />";
+
+//var_dump($this->translate());
+
+?>
+<div id="content">
+	<div class="container">
+		<div class="language">
+			<?php if ($locale != "sr"){ ?>
+			<a href="<?php echo $this->url(array('lang' => 'sr', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">Serbian
+			&nbsp;<img width="24" height="24" alt="" src="/images/RS.png"></a>
+			<?php } ?>
+			<?php if ($locale != "en"){ ?>
+			<a href="<?php echo $this->url( array('lang' => 'en', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">English
+			&nbsp;<img width="24" height="24" alt="" src="/images/US.png"></a>
+			<?php }?>
+		</div>
+	</div>
+	<div class="container well">
+		<?php echo $this->layout()->content ?>
+	</div>
+</div>

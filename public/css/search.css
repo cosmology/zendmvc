@@ -1,25 +1,36 @@
-/* ul {
+/* #search-form label {
+    color: #333333;
+    display: block;
+    margin-bottom: 5px;
+	padding-left: 15px;
+} */
+
+#search-form ul {
 	margin-left: 0;
-	padding-left: 1em;
-	text-indent: -1em;
+	/* padding-left: 1em; 
+	text-indent: -1em;*/
 }
 
-	ul li {
+	#search-form ul li {
 		display: inline;
-		list-style-type: none;
+		list-style: none;
 	}
 #results {
 	clear:left; 
 	float:left;
+	list-style: disc;
 }
 	
 #results ul {
 	margin-left: 0;
 	padding-left: 1em;
 	text-indent: -1em;
+	list-style: disc;
 }
 	#results ul li {
 		display: block;
-		list-style-type:circle;
-	} */
+		list-style: disk;
+		line-height: 28px;
+		margin-left: 20px;
+	}
 	

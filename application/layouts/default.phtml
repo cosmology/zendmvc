@@ -12,12 +12,13 @@
 	// we do this here so all pages using this layout can have jQuery
 	// do the same with other libs like Dojo YUI ExtJS ...
 	if($this->jQuery()->isEnabled()){
-		$this->jQuery()->addStylesheet('/js/jquery/css/smoothness/jquery-ui-1.8.23.custom.css')
+		$this->jQuery()->addStyleSheet($this->baseUrl('css/styles.css'))
+						->addStyleSheet($this->baseUrl('css/bootstrap.css'))
+						->addStylesheet('/js/jquery/css/smoothness/jquery-ui-1.8.23.custom.css')
 						->addStyleSheet($this->baseUrl('css/demo_page.css'))
 						->addStyleSheet($this->baseUrl('css/demo_table.css'))
 						->addStyleSheet($this->baseUrl('css/demo_table_jui.css'))
-						->addStyleSheet($this->baseUrl('css/styles.css'))
-						->addStyleSheet($this->baseUrl('css/bootstrap.css'))
+						
 						->setLocalPath('/js/jquery/js/jquery-1.8.0.min.js')
 						->addJavascriptFile('/js/jquery/js/jquery.dataTables.min.js')
 						->addJavascriptFile('/js/my.js')
@@ -29,11 +30,11 @@
 
 </head>
 
-<body>
-<?php echo $this->render('/partial/header.phtml') ?>
-<div class="container well">
-	<?php echo $this->layout()->content ?>
-</div>
-<?php echo $this->render('/partial/footer.phtml') ?>
+<body class="m-tests c-index a-controls" data-spy="scroll" data-target=".subnav" data-offset="50">
+	<div id="wrapper">
+		<?php echo $this->render('/partial/header.phtml') ?>
+		<?php echo $this->render('/partial/content.phtml') ?>
+		<?php echo $this->render('/partial/footer.phtml') ?>
+	</div>
 </body>
 </html>

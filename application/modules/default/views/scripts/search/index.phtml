@@ -1,12 +1,12 @@
 <?php echo $this->headLink()->appendStylesheet($this->baseUrl("/css/search.css"));?>   
-<p>Search Google for potential clients!</p>
- 
+<h2><?php echo $this->translate('search'); ?></h2>
+<hr>
+<div id="search-form">
 <?php
 $this->form->setAction($this->url());
 echo $this->form;
-
 ?>
-
+</div>
 <div id="results">
 	<ul>
 	<?php 

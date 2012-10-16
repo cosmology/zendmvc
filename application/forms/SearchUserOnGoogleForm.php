@@ -24,7 +24,7 @@ public function init()
 		
 		// Add the name element
 		$this->addElement('text', 'name', array(
-				'label'      => 'Search by Full Name:',
+				'label'      => 'Search Google:',
 				'required'   => true,
 				'validators' => array(
 						array('validator' => 'StringLength', 'options' => array(0, 30))
@@ -36,7 +36,7 @@ public function init()
 		// Add the submit button
 		$this->addElement('submit', 'submit', array(
 				'ignore'   => true,
-				'label'    => 'Search',
+				'label'    => 'Go',
 		));
 		
 		

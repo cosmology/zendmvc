@@ -19,11 +19,6 @@ caption,th{text-align:left;}
 input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
 input,button,textarea,select{*font-size:100%;}
 
-body {
-    font: 62.5%/1.5em Helvetica, Arial, sans-serif;
-	background: url(grids.gif) repeat;
-}
-
 hr {
     border: 0;
     height: 1px;
@@ -31,7 +26,7 @@ hr {
     background:#777;
 	margin-bottom: 1em;
 }
-h1,h2,h3,h4,h5,h6 {clear:both}
+h1,h2,h3,h4,h5,h6 {clear:both;}
 
 pre {
     margin: 8px;
@@ -62,9 +57,14 @@ caption {
 a {
     outline:none;
     text-decoration:none;
+	color: #339900;
 }
 a img {
 	border: none;
+}
+p {
+	line-height: 1.66em;
+	margin: 20px 0 10px;
 }
 .center {
     display: block;
@@ -85,21 +85,115 @@ article, aside, header, footer, section {
 }
 
 /*Main*/
-html {
-    min-height: 100%;
-}
+html ,
 body {
-    color:#0F0F0F;
-    height: 100%;
-    min-height: 100%;
-	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-	padding-bottom: 20px;
+	height: 100%;
+	line-height: 25px;
+	background-color: #D4D6D7;
+	background-image: radial-gradient(ellipse closest-side at center 300px , #FFFFFF, #F2F3F4 200px, #D2D4D5 700px);
+	background-position: center 0px, center center;
+    background-repeat: no-repeat;
 }
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+#content {
+	padding: 80px 0;
+}
+
+
+footer {
+	height: 80px;
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;	
+	/* background: none repeat scroll 0 0 #2C2C2C; *//*  134C96 bh blue*/	
+	background-color: #222222; /* Old browsers */
+	background-repeat: repeat-x; /* Repeat the gradient */	
+	background-image: -moz-linear-gradient(top, #373D3F, #222222);
+  	background-image: -ms-linear-gradient(top, #373D3F, #222222);
+  	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#373D3F), to(#222222));
+  	background-image: -webkit-linear-gradient(top, #373D3F, #222222);
+  	background-image: -o-linear-gradient(top, #373D3F, #222222);
+  	background-image: linear-gradient(top, #373D3F, #222222);
+	background-image: -o-linear-gradient(top, #373D3F 0%,#222222 100%); /* Opera 11.10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373D3F', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
+	background-image: linear-gradient(top, #373D3F 0%,#222222 100%); /*  W3C */	
+	vertical-align: middle;
+	font-size: 0.75em;
+	/* padding: 20px 0; */
+}
+
+footer nav {
+    border-bottom: 1px solid #373D3F;
+    border-right: 0 none;
+    border-top: 1px solid #373D3F;
+	margin-top: 25px;
+	float: left;
+}
+footer nav li {
+    /* background-color: #F5FAFA; 
+    border-right: 1px solid #DCDFE2;*/
+	font-family: "OpenSansCondBold", Helvetica, Arial, sans-serif;
+    display: block;
+    float: left;
+    line-height: 22px;
+    margin: 0;
+    text-align: center;
+}
+footer nav li a {
+    /* border-right: 1px solid #FFFFFF; */
+    color: #888888;
+    cursor: pointer;
+    display: block;
+    font-size: 11px;
+    padding: 0 14px;
+    text-decoration: none;
+	letter-spacing: 0.1em;
+}
+footer nav li a span {
+    display: block;
+}
+footer nav li:hover a {
+    /* background-color: #F5FAFA; */
+    color: #4DA400;
+}
+footer nav li.active a {
+    /* background-color: #4DA400; 
+    border-left: 1px solid #FFFFFF;*/
+    color: #4DA400;
+}
+footer p#developed {
+	color: #888888;
+    float: right;
+    position: relative;
+	text-align: right;
+	line-height: 16px;
+	font-size: 0.9em;
+	font-family: "OpenSansCondLight", Helvetica, Arial, sans-serif;
+	margin-top: 20px;
+}
+
+footer p#developed b {
+	font-family: "OpenSansCondLightItalic", Helvetica, Arial, sans-serif;
+	font-size: 1.4em;
+}
+
+.language {
+	float: right; 
+	padding: 10px 0px;
+}
+
 .navbar a.brand {
-	background: url(/images/zf-logo-small.png) no-repeat;
+	background: url(/images/zf-logo-small.png) no-repeat scroll 0 20px transparent;
 	font-weight: 600;
-	font-size: 18px;
-	padding: 14px 60px 2px;
+	display: block;
+	font-size: 24px;
+	padding: 33px 80px 17px 65px;;
 }
 
 article {
@@ -112,9 +206,49 @@ article {
 	article .content {
 		padding: 1em 0;
 	}
-footer {
-	color: #777;
+
+/* Fonts */
+@font-face {
+ font-family: OpenSansCondLightItalic;
+ src: url("/fonts/OpenSans-CondLightItalic.eot") /* EOT file for IE */
 }
+@font-face {
+ font-family: OpenSansCondLightItalic;
+ src: url("/fonts/OpenSans-CondLightItalic.ttf") /* TTF file for CSS3 browsers */
+}
+@font-face {
+ font-family: OpenSansCondLight;
+ src: url("/fonts/OpenSans-CondLight.eot") /* EOT file for IE */
+}
+@font-face {
+ font-family: OpenSansCondLight;
+ src: url("/fonts/OpenSans-CondLight.ttf") /* TTF file for CSS3 browsers */
+}
+@font-face {
+ font-family: OpenSansCondBold;
+ src: url("/fonts/OpenSans-CondBold.eot") /* EOT file for IE */
+}
+@font-face {
+ font-family: OpenSansCondBold;
+ src: url("/fonts/OpenSans-CondBold.ttf") /* TTF file for CSS3 browsers */
+}
+
+/* Locale flags */
+/* #country_select div.countries label span {
+    background-image: url("/images/flags_iso_24_sprite.png");
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    margin: -5px 5px 0 0;
+    position: relative;
+    text-indent: -9999px;
+}
+.flags_iso_24_sr {
+    background-position: -144px -672px;
+    height: 24px;
+    width: 24px;
+} */
+
 /*/Main*/
 /*Messages*/
 #messages {
