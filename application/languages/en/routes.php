@@ -7,6 +7,8 @@ return array(
 		'search'	=> 'search',
 		'contact'	=> 'contact',
 		'admin'		=> 'admin',
+		'english'	=> 'english',
+		'serbian'	=> 'serbian',
 		'home_header_title' => 'MVC demo app',
 		'home_body_h2_header' => 'Welcome to Ivan\'s Zend presentation',
 		'contact_body_h2_header' => 'Start Your Conversation Now',

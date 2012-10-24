@@ -34,12 +34,14 @@ echo '</ol>'; */
 	<div class="container">
 		<div class="language">
 			<?php if ($locale != "sr"){ ?>
-			<a href="<?php echo $this->url(array('lang' => 'sr', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">Serbian
-			&nbsp;<img width="24" height="24" alt="" src="/images/RS.png"></a>
+			<a href="<?php echo $this->url(array('lang' => 'sr', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">
+			<span><?php echo $this->translate('serbian');?></span>
+			<img width="24" height="24" alt="" src="/images/RS.png" border="0"></a>
 			<?php } ?>
 			<?php if ($locale != "en"){ ?>
-			<a href="<?php echo $this->url( array('lang' => 'en', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">English
-			&nbsp;<img width="24" height="24" alt="" src="/images/US.png"></a>
+			<a href="<?php echo $this->url( array('lang' => 'en', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">
+			<span><?php echo $this->translate('english');?></span>
+			<img width="24" height="24" alt="" src="/images/US.png"></a>
 			<?php }?>
 		</div>
 	</div>

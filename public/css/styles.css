@@ -187,6 +187,11 @@ footer p#developed b {
 	float: right; 
 	padding: 10px 0px;
 }
+.language span {
+	font-family: "OpenSansCondBold", Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	padding-rithg: 7px;
+}
 
 .navbar a.brand {
 	background: url(/images/zf-logo-small.png) no-repeat scroll 0 20px transparent;
@@ -231,6 +236,11 @@ article {
 @font-face {
  font-family: OpenSansCondBold;
  src: url("/fonts/OpenSans-CondBold.ttf") /* TTF file for CSS3 browsers */
+}
+
+@font-face {
+ font-family: Proxima-Nova-Light;
+ src: url("/fonts/ProximaNova-Light.otf") /* OTF file for CSS3 browsers */
 }
 
 /* Locale flags */

@@ -41,10 +41,10 @@
 	</div>
 	<div style="float:right;">
 	<?php if ($locale != "sr"){ ?>
-	<a href="<?php echo $this->url(array('lang' => 'sr', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">Serbian</a>
+	<a href="<?php echo $this->url(array('lang' => 'sr', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>"><?php $this->translate('serbian');?></a>
 	<?php } ?>
 	<?php if ($locale != "en"){ ?>
-	<a href="<?php echo $this->url( array('lang' => 'en', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>">English</a>
+	<a href="<?php echo $this->url( array('lang' => 'en', 'module' => 'default', 'controller' => $currentController, 'action' => 'index'), 'defaultModuleRoute'); ?>"><?php $this->translate('english');?></a>
 	<?php }?>
 	</div>
 </div>

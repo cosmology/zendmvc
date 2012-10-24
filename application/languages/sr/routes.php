@@ -7,6 +7,8 @@ return array(
 		'search'	=> 'pretraga',
 		'contact'	=> 'kontakt',
 		'admin'		=> 'admin',
+		'english'	=> 'engleski',
+		'serbian'	=> 'srpski',
 		'home_header_title' => 'MVC demo aplikacija',
 		'home_body_h2_header' => 'Dobrodosli na Zend prezentaciju',
 		'contact_body_h2_header' => 'Zapocnite Konverzaciju odmah',
