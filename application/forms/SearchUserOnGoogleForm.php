@@ -9,7 +9,7 @@ public function init()
 		$this->setMethod('post');
 		$this->clearDecorators();
 		$this->addDecorator('FormElements')
-		->addDecorator('HtmlTag',
+				->addDecorator('HtmlTag',
 				array('tag' => '<ul>'))
 				->addDecorator('Form');
 		
